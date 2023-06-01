@@ -1,0 +1,39 @@
+.flex-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+#header{
+    position: relative;
+    height: 100px;
+    background-color: #2B4074;
+}
+
+#logo_dc {margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#header_menu_button {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 2px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+#header_menu_button_logo {
+    margin: auto;
+    display: block;
+}

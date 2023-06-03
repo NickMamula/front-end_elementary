@@ -8,19 +8,49 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        #intro_block {
+            background-image: url('images/intro_block_background.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover
+        }
+    </style>
 </head>
 <body>
 <div class="flex-container">
 
-    <div id="header">
+    <div id="header_block">
         <img id="logo_dc" alt="logo" src="images/logo-dc.svg"/>
         <div id="header_menu_button"><img id="header_menu_button_logo" src="images/header_menu_logo.png" alt="menu"
-                                          width="14" height="14">
+                                          width="24" height="20">
         </div>
     </div>
-    <div id="intro">
 
+    <div id="intro_block">
+            <h1 id="intro_block_title_main" style="font-size:60px;">МЫСЛИ<br>ГЛОБАЛЬНО</h1>
+            <h4 id="intro_block_text_main">Di Gi - это диджитал агенство полного цикла, направленное на самый лучший<br>рузультат
+                наших клиентов в маркетинге, продажах и управлнии</h4>
+            <button id="intro_block_button">ПОДРОБНЕЕ</button>
+          <!--  <div class="pagination_three_circle">
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </div> //-->
+        <div class="pagination_arrow">
+            <a href="#">❮</a>
+            <a href="#">❯</a>
+        </div>
     </div>
+
+    <div id="promo_block">
+        <p style="left: 100px">Вы полюбите нас с первой встречи!</p>
+    </div>
+
+    <div id="services_block">
+        <p style="left: 100px">Сервис</p>
+    </div>
+
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

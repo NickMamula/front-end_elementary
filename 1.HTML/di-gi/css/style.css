@@ -1,16 +1,46 @@
+:root {
+    --main_blue: #2B4074;
+    --main_white: #FFFFFF;
+}
+
+@keyframes color {
+    0% {
+        background: #33CCCC;
+    }
+    20% {
+        background: #33CC36;
+    }
+    40% {
+        background: #B8CC33;
+    }
+    60% {
+        background: #FCCA00;
+    }
+    80% {
+        background: #33CC36;
+    }
+    100% {
+        background: #33CCCC;
+    }
+}
+
+
 .flex-container {
     display: flex;
-    width: 100%;
     flex-direction: column;
+    margin: auto;
+    width: 1440px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-#header{
+#header_block {
     position: relative;
     height: 100px;
-    background-color: #2B4074;
+    background-color: var(--main_blue);
 }
 
-#logo_dc {margin: 0;
+#logo_dc {
+    margin: 0;
     position: absolute;
     top: 50%;
     left: 1em;
@@ -23,7 +53,7 @@
     width: 40px;
     background-color: white;
     border-radius: 2px;
-    margin: 0;
+    margin: auto;
     position: absolute;
     top: 50%;
     right: 1em;
@@ -34,6 +64,84 @@
 }
 
 #header_menu_button_logo {
-    margin: auto;
+    margin: 10px 14px 16px;
     display: block;
 }
+
+#intro_block {
+    height: 668px;
+    color: var(--main_white);
+    /*
+    animation: color 9s infinite linear;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;*/
+}
+
+
+#intro_block_title_main {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px;
+
+    margin-top: 2em;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#intro_block_text_main {
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    text-align: center;
+    color: var(--main_white);
+}
+
+#intro_block_button {
+    width: 200px;
+    height: 50px;
+    border-radius: 3px;
+    color: var(--main_white);
+    background-color: var(--main_blue);
+    margin-top: 2em;
+    margin-left: 620px;
+}
+
+
+.pagination_three_circle {
+    background-color: var(--main_white);
+    float: left;
+    padding: 10px 10px;
+    margin-left: 6px;
+    transition: background-color .3s;
+    border-radius: 20px;
+}
+
+.pagination_three_circle {
+    border: 1px solid var(--main_white);
+    background-color: unset;
+    padding: 9px 9px;
+}
+
+.pagination_arrow {
+    position: absolute;
+    width: 70px;
+    height: 141px;
+    left: 1370px;
+    top: 264px;
+
+}
+
+#promo_block{
+    height: 192px;
+    background-color: var(--main_blue);
+}
+
+#services_block{
+    height: 547px;
+    background-color: var(--main_white);
+}
+
+

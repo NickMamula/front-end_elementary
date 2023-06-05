@@ -3,28 +3,6 @@
     --main_white: #FFFFFF;
 }
 
-@keyframes color {
-    0% {
-        background: #33CCCC;
-    }
-    20% {
-        background: #33CC36;
-    }
-    40% {
-        background: #B8CC33;
-    }
-    60% {
-        background: #FCCA00;
-    }
-    80% {
-        background: #33CC36;
-    }
-    100% {
-        background: #33CCCC;
-    }
-}
-
-
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -71,11 +49,25 @@
 #intro_block {
     height: 668px;
     color: var(--main_white);
-    /*
-    animation: color 9s infinite linear;
+
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 20% 20% 20% 20% 20%;*/
+    grid-template-columns: 70px 1fr 70px;
+    grid-template-rows: 1fr;
+}
+
+#intro_block_column2 {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+}
+
+#intro_block_column3 {
+    grid-column-start: 3;
+    grid-column-end: span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
 
@@ -102,46 +94,172 @@
 #intro_block_button {
     width: 200px;
     height: 50px;
+    border-color: var(--main_blue);
     border-radius: 3px;
     color: var(--main_white);
     background-color: var(--main_blue);
     margin-top: 2em;
-    margin-left: 620px;
+    margin-left: 550px;
 }
 
-
+---------------------------------------------------------------------,
+-------------------------,
 .pagination_three_circle {
+    margin-left: 600px;
+    margin-top: 180px;
+}
+
+.pagination_circle {
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding-left: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.pagination_circle:hover {
     background-color: var(--main_white);
-    float: left;
-    padding: 10px 10px;
-    margin-left: 6px;
-    transition: background-color .3s;
-    border-radius: 20px;
 }
 
-.pagination_three_circle {
-    border: 1px solid var(--main_white);
-    background-color: unset;
-    padding: 9px 9px;
-}
-
+-------------------------,
+---------------------------------------------------------------------,
 .pagination_arrow {
-    position: absolute;
     width: 70px;
     height: 141px;
-    left: 1370px;
-    top: 264px;
-
 }
 
-#promo_block{
-    height: 192px;
+#intro_block_up_arrow {
+    height: 70px;
+    width: 70px;
     background-color: var(--main_blue);
 }
 
-#services_block{
+#intro_block_up_arrow:hover {
+    --main_blue: white;
+    --main_white: #2B4074;
+}
+
+#intro_block_up_arrow div {
+    width: 18px;
+    height: 18px;
+    transform: rotate(-45deg);
+}
+
+#intro_block_up_arrow_rectangle_left {
+    position: relative;
+    right: 10px;
+    left: 31px;
+    top: 26px;
+    background-color: #DADADA;
+}
+
+
+#intro_block_up_arrow_rectangle_right {
+    position: relative;
+    right: 10px;
+    left: 37px;
+    top: 8px;
+    background-color: var(--main_blue);
+
+}
+
+
+#intro_block_down_arrow {
+    height: 70px;
+    width: 70px;
+    background-color: var(--main_white);
+}
+
+
+#intro_block_down_arrow:hover {
+    --main_blue: white;
+    --main_white: #2B4074;
+}
+
+#intro_block_down_arrow div {
+    width: 18px;
+    height: 18px;
+    transform: rotate(-45deg);
+}
+
+#intro_block_down_arrow_rectangle_left {
+    position: relative;
+    right: 10px;
+    left: 25px;
+    top: 26px;
+    background-color: #DADADA;
+}
+
+
+#intro_block_down_arrow_rectangle_right {
+    position: relative;
+    right: 10px;
+    left: 19px;
+    top: 8px;
+    background-color: var(--main_white);
+}
+
+
+#promo_block {
+    height: 192px;
+    background-color: var(--main_blue);
+    color: var(--main_white);
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns:2fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+#promo_block_column1 {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+#promo_block_button {
+    width: 200px;
+    height: 50px;
+    border-radius: 3px;
+    color: var(--main_blue);
+    background-color: var(--main_white);
+    margin-top: 2em;
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 51px;
+}
+
+#services_block {
     height: 547px;
     background-color: var(--main_white);
 }
 
 
+#promo_block_column2 {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+#promo_block_title {
+    bottom: 4px;
+    font-family: 'Roboto',serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: flex-end;
+}
+
+#promo_block_text {
+    font-family: 'Dosis', serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: flex-end;
+}

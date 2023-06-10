@@ -509,7 +509,7 @@ div.services_block_column2_item:hover {
     color: var(--main_blue);
 }
 
-.recent_block_div_hower {
+.recent_block_div_hoer {
     z-index: var(--z_index_recent);
     top: 12px;
     margin: auto;

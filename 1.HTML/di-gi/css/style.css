@@ -28,6 +28,10 @@ svg {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+/*
+Block header start
+*/
+
 #header_block {
     position: relative;
     height: 100px;
@@ -68,6 +72,13 @@ svg {
     display: block;
 }
 
+/*
+Block header end
+*/
+
+/*
+Block intro start
+*/
 #intro_block {
     height: 668px;
     color: var(--main_white);
@@ -131,8 +142,6 @@ svg {
     color: var(--main_blue);
 }
 
----------------------------------------------------------------------,
--------------------------,
 .pagination_three_circle {
     margin-left: 600px;
     margin-top: 180px;
@@ -151,8 +160,6 @@ svg {
     background-color: var(--main_white);
 }
 
--------------------------,
----------------------------------------------------------------------,
 .pagination_arrow {
     width: 70px;
     height: 141px;
@@ -296,8 +303,6 @@ svg {
     align-items: flex-end;
 }
 
----------------------------,
-------------,
 #services_block {
     height: 547px;
     background-color: var(--main_white);
@@ -310,8 +315,6 @@ svg {
     grid-template-rows: 2fr;
 }
 
-------------,
----------------------------,
 #services_block_column1 {
     display: flex;
     flex-direction: column;
@@ -742,3 +745,31 @@ div.services_block_column2_item:hover {
     margin: 160px -145px;
     z-index: var(--news_block_zindex_logo);
 }
+
+#news_block_info_logo5 {
+    position: absolute;
+    margin: 180px -145px;
+    z-index: var(--news_block_zindex_logo);
+}
+
+#news_block_info_logo6 {
+    position: absolute;
+    margin: 70px -145px;
+    z-index: var(--news_block_zindex_logo);
+}
+
+#news_block_info_logo7 {
+    position: absolute;
+    margin: 80px -145px;
+    z-index: var(--news_block_zindex_logo);
+}
+
+#news_block_info_logo8 {
+    position: absolute;
+    margin: 200px -145px;
+    z-index: var(--news_block_zindex_logo);
+}
+
+/*
+Block testimonial start
+*/

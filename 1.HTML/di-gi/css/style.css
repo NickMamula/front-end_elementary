@@ -149,15 +149,16 @@ Block intro start
 
 .pagination_circle {
     margin-left: 10px;
-    border: 1px solid #ddd;
+    border: 2px solid var(--main_white);
     border-radius: 15px;
     padding-left: 18px;
     color: white;
     text-decoration: none;
+    background-color: var(--main_white);
 }
 
 .pagination_circle:hover {
-    background-color: var(--main_white);
+    background-color: var(--main_transperent);
 }
 
 .pagination_arrow {
@@ -783,25 +784,63 @@ Block testimonial start
 
 #testimonial_block_double_quote {
     padding-top: 100px;
+    padding-bottom: 30px;
 }
 
 #testimonial_block_paragraph {
-    padding-top: 30px;
+    color: #4A4A4A;
+}
 
+.testimonial_block_paragraph {
     font-family: 'Roboto Condensed', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
     line-height: 42px;
+
+    color: #4A4A4A;
+}
+
+#testimonial_block span {
+    color: var(--main_blue);
+    font-weight: bold;
+}
+
+#testimonial_block_author {
+    padding-top: 30px;
+    padding-bottom: 80px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
     display: flex;
     align-items: flex-end;
     text-align: center;
-
-    background: linear-gradient(to right,#8ebf42 730%, #1c87c9 75%, #8ebf42 75%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
 
     color: #4A4A4A;
+}
 
+.testimonial_pagination_circle {
+    margin-left: 10px;
+    border:2px solid var(--main_blue);
+    border-radius: 15px;
+    padding-left: 18px;
+    color: white;
+    text-decoration: none;
+    background-color: var(--main_blue);
+}
+
+.testimonial_pagination_circle:hover {
+    background-color: var(--main_transperent);
+}
+
+/*
+Block footer start
+*/
+
+#footer_block {
+    height: 639px;
+    background-color: var(--main_blue);
 }

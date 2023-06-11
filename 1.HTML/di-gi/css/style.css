@@ -915,14 +915,15 @@ Block footer start
     height: auto;
 }
 
-.footer_center_div_div {
-    width: 283px;
+.footer_center_div_logo {
+    width: 287px;
     height: 59px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 1px solid #7EBF84;
+    border-left: none;
 }
 
 .footer_center_div_div_header {
@@ -977,4 +978,15 @@ text-decoration: none;
 
 #footer_block a:active {
     text-decoration: none;
+}
+
+.footer_center_div_logo_none_right_border {
+    width: 287px;
+    height: 59px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #7EBF84;
+    border-right: none;
 }

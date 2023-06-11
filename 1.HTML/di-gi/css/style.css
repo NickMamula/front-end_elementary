@@ -863,7 +863,7 @@ Block footer start
 #footer_block_center_div {
     width: 1141px;
     height: 366px;
-    margin-bottom: 98px;
+    margin-bottom: 88px;
 }
 
 #footer_block_center_div h2 {
@@ -886,7 +886,8 @@ Block footer start
     overflow: auto;
     height: 42px;
     width: 1440px;
-    background-color: #F9F6E5;;
+    background-color: #F9F6E5;
+    margin-top: -10px;
 }
 
 #footer_block_bottom_header {
@@ -905,15 +906,13 @@ Block footer start
 }
 
 #footer_block_bottom_div {
+    display: flex;
+    flex-direction: row;
     float: right;
-    margin-top: 7px;
+    margin-top: 1px;
     margin-right: 136px;
 }
 
-.fotter_div_div {
-    width: 286px;
-    height: auto;
-}
 
 .footer_center_div_logo {
     width: 287px;
@@ -989,4 +988,48 @@ text-decoration: none;
     justify-content: center;
     border: 1px solid #7EBF84;
     border-right: none;
+}
+
+#space_block {
+    height: 100px;
+}
+
+#intro_block_up_arrow1 {
+    height: 15px;
+    width: 15px;
+    margin-top: 15px;
+    margin-left: 10px;
+    background-color: var(--main_transperent);
+
+}
+
+#intro_block_up_arrow1:hover {
+    --main_blue: var(--main_grey_second);
+    --main_grey: var(--main_blue);
+}
+
+#intro_block_up_arrow1 div {
+    width: 10px;
+    height: 10px;
+    transform: rotate(-45deg);
+}
+
+#intro_block_up_arrow_rectangle_left1 {
+    position: relative;
+    background-color: var(--main_blue);
+}
+
+
+#intro_block_up_arrow_rectangle_right1 {
+    margin-top: -8px;
+    position: relative;
+    background-color: #F9F6E5;
+
+}
+
+.pagination_arrow1 {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }

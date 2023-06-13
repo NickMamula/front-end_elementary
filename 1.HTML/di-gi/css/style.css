@@ -16,9 +16,6 @@
     --news_block_zindex_logo: -1;
 }
 
-svg {
-    color: blue;
-}
 
 .flex-container {
     display: flex;
@@ -32,7 +29,7 @@ svg {
 Block header start
 */
 
-#header_block {
+.header_block {
     position: relative;
     height: 100px;
     background-color: var(--main_blue);
@@ -71,11 +68,6 @@ Block header start
     margin: 10px 14px 16px;
     display: block;
 }
-
-/*
-Block header end
-*/
-
 /*
 Block intro start
 */
@@ -964,7 +956,7 @@ Block footer start
 }
 
 #footer_block a:link {
-text-decoration: none;
+    text-decoration: none;
 }
 
 #footer_block a:visited {
@@ -1033,3 +1025,4 @@ text-decoration: none;
     flex-direction: column;
     justify-content: end;
 }
+

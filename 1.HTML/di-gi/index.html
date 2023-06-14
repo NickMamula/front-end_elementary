@@ -9,12 +9,21 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/media-queries.css" type="text/css">
-    <style style="display:block;color: red; white-space:pre">
+    <style >
         #intro_block {
             background-image: url('images/intro_block_background.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-size: cover
+            background-size: cover;
+        }
+        @media screen and (max-width: 768px) {
+            #intro_block {
+                background-image: url('images/intro_block_background2.png');
+                background-repeat: no-repeat;
+                background-attachment: local;
+                background-size: cover;
+
+            }
         }
     </style>
 </head>
@@ -30,7 +39,7 @@
 
     <div id="intro_block">
         <div id="intro_block_column2">
-            <h1 id="intro_block_title_main" style="font-size:60px;">МЫСЛИ<br>ГЛОБАЛЬНО</h1>
+            <h1 id="intro_block_title_main">МЫСЛИ<br>ГЛОБАЛЬНО</h1>
             <h4 id="intro_block_text_main">Di Gi - это диджитал агенство полного цикла, направленное на самый лучший<br>рузультат
                 наших клиентов в маркетинге, продажах и управлнии</h4>
             <button id="intro_block_button">ПОДРОБНЕЕ</button>

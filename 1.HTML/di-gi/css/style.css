@@ -154,6 +154,7 @@ Block intro start
 }
 
 .pagination_arrow {
+    float: right;
     width: 70px;
     height: 141px;
 }

@@ -68,6 +68,7 @@ Block header start
     margin: 10px 14px 16px;
     display: block;
 }
+
 /*
 Block intro start
 */
@@ -297,6 +298,7 @@ Block intro start
     align-items: flex-end;
 }
 
+/*Services block*/
 #services_block {
     height: 547px;
     background-color: var(--main_white);

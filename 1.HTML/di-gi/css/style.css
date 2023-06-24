@@ -347,6 +347,9 @@ Block intro start
     padding-left: 62px;
 
 }
+#services_block_header3::after{
+    content:"измерения производительности";
+}
 
 #services_block_line {
     width: 99px;
@@ -364,7 +367,7 @@ Block intro start
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
-
+    width: 351px;
     margin-top: 35px;
     padding-left: 62px;
 

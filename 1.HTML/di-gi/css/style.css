@@ -317,14 +317,6 @@ Block intro start
     justify-items: center;
 }
 
-#services_block_column2 {
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
-}
-
 #services_block_header1 {
     font-family: 'Roboto Condensed', sans-serif;
     font-style: normal;
@@ -387,7 +379,20 @@ Block intro start
 
 }
 
+#services_block_column2 {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background-color:#F9F6E5;
+    grid-gap: 1px;
+    padding-left: 1px;
+}
+
 div.services_block_column2_item {
+    padding: 5px;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -396,8 +401,6 @@ div.services_block_column2_item {
     height: 255px;
     border: 4px solid var(--main_white);
     transition: all 400ms ease;
-
-
 }
 
 .services_block_strategy_image {
@@ -440,7 +443,7 @@ div.services_block_column2_item:hover {
     line-height: 18px;
     color: var(--main_white);
 }
-
+/*RECENT BLOCK*/
 #recent_work_block {
     height: 610px;
     background-color: var(--main_blue); /* For browsers that do not support gradients */

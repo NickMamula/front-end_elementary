@@ -339,8 +339,9 @@ Block intro start
     padding-left: 62px;
 
 }
-#services_block_header3::after{
-    content:"измерения производительности";
+
+#services_block_header3::after {
+    content: "измерения производительности";
 }
 
 #services_block_line {
@@ -385,7 +386,7 @@ Block intro start
     grid-template-rows: 1fr 1fr;
     align-items: center;
     justify-items: center;
-    background-color:#F9F6E5;
+    background-color: #F9F6E5;
     grid-gap: 1px;
     padding-left: 1px;
 }
@@ -443,6 +444,7 @@ div.services_block_column2_item:hover {
     line-height: 18px;
     color: var(--main_white);
 }
+
 /*RECENT BLOCK*/
 #recent_work_block {
     height: 610px;
@@ -545,6 +547,7 @@ div.services_block_column2_item:hover {
     margin-top: 6px;
 }
 
+/*VIDEO BLOCK*/
 #video_block {
     height: 580px;
     background-color: var(--main_white); /* For browsers that do not support gradients */
@@ -630,6 +633,13 @@ div.services_block_column2_item:hover {
     color: #9B9B9B;
 }
 
+#video_work_block_line {
+    width: 99px;
+    height: 8px;
+    background-color: var(--main_blue);
+    margin-top: 19px;
+}
+
 #news_block {
     height: 1044px;
     background-color: var(--news_block_background); /* For browsers that do not support gradients */
@@ -645,12 +655,6 @@ div.services_block_column2_item:hover {
     justify-content: center;
 }
 
-#video_work_block_line {
-    width: 99px;
-    height: 8px;
-    background-color: var(--main_blue);
-    margin-top: 19px;
-}
 
 #news_block_titles1 {
     height: 56px;

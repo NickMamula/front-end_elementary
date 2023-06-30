@@ -12,8 +12,15 @@
     --main_transperent: transperent;
     --news_color_white_to_blue: var(--main_white);
     --news_blue_to_white: var(--main_blue);
+    --news_black_to_white: #4A4A4A;
     --news_block_background: #F9F6E5;
     --news_block_zindex_logo: -1;
+
+    --news_block_change_text_2a: "Уникальный дизайн";
+    --news_block_change_text_2b: "Контекстная реклама";
+
+    --news_block_change_text_3a: "Контекстная реклама";
+    --news_block_change_text_3b: "";
 }
 
 
@@ -615,7 +622,7 @@ div.services_block_column2_item:hover {
 }
 
 #video_block_titles2 {
-    width: 584px;
+    width: 432px;
     height: 192px;
     margin-top: 39px;
     padding-left: 13px;
@@ -633,13 +640,13 @@ div.services_block_column2_item:hover {
     color: #9B9B9B;
 }
 
-#video_work_block_line {
+#news_work_block_line {
     width: 99px;
     height: 8px;
     background-color: var(--main_blue);
     margin-top: 19px;
 }
-
+/*NEWS BLOCK*/
 #news_block {
     height: 1044px;
     background-color: var(--news_block_background); /* For browsers that do not support gradients */
@@ -692,6 +699,10 @@ div.services_block_column2_item:hover {
 
 .news_block_images:hover {
     outline: 8px solid var(--main_blue);
+}
+
+#news_block_titles2_text:after {
+    content:var(--news_block_change_text_2a);
 }
 
 .news_block_titles {

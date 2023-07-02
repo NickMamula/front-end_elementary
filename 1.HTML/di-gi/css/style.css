@@ -824,7 +824,7 @@ div.services_block_column2_item:hover {
 Block testimonial start
 */
 #testimonial_block {
-    height: 480px;
+    height: 421px;
     display: flex;
     flex-direction: column;
     align-items: center;

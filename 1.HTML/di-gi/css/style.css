@@ -658,6 +658,7 @@ div.services_block_column2_item:hover {
     background-color: var(--main_blue);
     margin-top: 19px;
 }
+
 /*NEWS BLOCK*/
 #news_block {
     height: 1044px;
@@ -714,28 +715,28 @@ div.services_block_column2_item:hover {
 }
 
 #news_block_titles2_text:after {
-    content:var(--news_block_change_text_2a);
+    content: var(--news_block_change_text_2a);
 }
 
 #news_block_titles3_text:after {
-    content:var(--news_block_change_text_3a);
+    content: var(--news_block_change_text_3a);
 }
 
 #news_block_titles4_text:after {
-    content:var(--news_block_change_text_4a);
+    content: var(--news_block_change_text_4a);
 }
 
 #news_block_titles5_text:after {
-    content:var(--news_block_change_text_5a);
+    content: var(--news_block_change_text_5a);
 }
 
 #news_block_titles6_text:after {
-    content:var(--news_block_change_text_6a);
-}
-#news_block_titles7_text:after {
-    content:var(--news_block_change_text_7a);
+    content: var(--news_block_change_text_6a);
 }
 
+#news_block_titles7_text:after {
+    content: var(--news_block_change_text_7a);
+}
 
 
 .news_block_titles {
@@ -857,7 +858,7 @@ Block testimonial start
 
 #testimonial_block_author {
     padding-top: 30px;
-    padding-bottom: 80px;
+    padding-bottom: 36px;
     font-family: 'Roboto Condensed', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -1043,6 +1044,7 @@ Block footer start
     height: 100px;
 }
 
+/*INTRO BLOCK*/
 #intro_block_up_arrow1 {
     height: 15px;
     width: 15px;
@@ -1083,3 +1085,5 @@ Block footer start
     justify-content: end;
 }
 
+#intro_block_div {
+}

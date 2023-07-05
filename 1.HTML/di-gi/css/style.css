@@ -12,13 +12,29 @@
     --main_transperent: transperent;
     --news_color_white_to_blue: var(--main_white);
     --news_blue_to_white: var(--main_blue);
+    --news_black_to_white: #4A4A4A;
     --news_block_background: #F9F6E5;
     --news_block_zindex_logo: -1;
+
+    --news_block_change_text_2a: "Уникальный дизайн";
+    --news_block_change_text_2b: "Контекстная реклама";
+
+    --news_block_change_text_3a: "Контекстная реклама";
+    --news_block_change_text_3b: "Графика";
+
+    --news_block_change_text_4a: "Взгляд со стороны";
+    --news_block_change_text_4b: "Корпоративная культура";
+
+    --news_block_change_text_5a: "Графика";
+    --news_block_change_text_5b: "Уникальный дизайн";
+
+    --news_block_change_text_6a: "Соц сети и их польза";
+    --news_block_change_text_6b: "Взгляд со стороны";
+
+    --news_block_change_text_7a: "Корпоративная культура";
+    --news_block_change_text_7b: "Соц сети и их польза";
 }
 
-svg {
-    color: blue;
-}
 
 .flex-container {
     display: flex;
@@ -32,7 +48,7 @@ svg {
 Block header start
 */
 
-#header_block {
+.header_block {
     position: relative;
     height: 100px;
     background-color: var(--main_blue);
@@ -71,10 +87,6 @@ Block header start
     margin: 10px 14px 16px;
     display: block;
 }
-
-/*
-Block header end
-*/
 
 /*
 Block intro start
@@ -162,6 +174,7 @@ Block intro start
 }
 
 .pagination_arrow {
+    float: right;
     width: 70px;
     height: 141px;
 }
@@ -304,6 +317,7 @@ Block intro start
     align-items: flex-end;
 }
 
+/*Services block*/
 #services_block {
     height: 547px;
     background-color: var(--main_white);
@@ -319,14 +333,6 @@ Block intro start
 #services_block_column1 {
     display: flex;
     flex-direction: column;
-    justify-items: center;
-}
-
-#services_block_column2 {
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
     justify-items: center;
 }
 
@@ -353,6 +359,10 @@ Block intro start
 
 }
 
+#services_block_header3::after {
+    content: "измерения производительности";
+}
+
 #services_block_line {
     width: 99px;
     height: 8px;
@@ -369,7 +379,7 @@ Block intro start
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
-
+    width: 351px;
     margin-top: 35px;
     padding-left: 62px;
 
@@ -389,7 +399,20 @@ Block intro start
 
 }
 
+#services_block_column2 {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background-color: #F9F6E5;
+    grid-gap: 1px;
+    padding-left: 1px;
+}
+
 div.services_block_column2_item {
+    padding: 5px;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -398,8 +421,6 @@ div.services_block_column2_item {
     height: 255px;
     border: 4px solid var(--main_white);
     transition: all 400ms ease;
-
-
 }
 
 .services_block_strategy_image {
@@ -443,6 +464,7 @@ div.services_block_column2_item:hover {
     color: var(--main_white);
 }
 
+/*RECENT BLOCK*/
 #recent_work_block {
     height: 610px;
     background-color: var(--main_blue); /* For browsers that do not support gradients */
@@ -544,6 +566,7 @@ div.services_block_column2_item:hover {
     margin-top: 6px;
 }
 
+/*VIDEO BLOCK*/
 #video_block {
     height: 580px;
     background-color: var(--main_white); /* For browsers that do not support gradients */
@@ -611,7 +634,7 @@ div.services_block_column2_item:hover {
 }
 
 #video_block_titles2 {
-    width: 584px;
+    width: 432px;
     height: 192px;
     margin-top: 39px;
     padding-left: 13px;
@@ -629,6 +652,14 @@ div.services_block_column2_item:hover {
     color: #9B9B9B;
 }
 
+#news_work_block_line {
+    width: 99px;
+    height: 8px;
+    background-color: var(--main_blue);
+    margin-top: 19px;
+}
+
+/*NEWS BLOCK*/
 #news_block {
     height: 1044px;
     background-color: var(--news_block_background); /* For browsers that do not support gradients */
@@ -644,12 +675,6 @@ div.services_block_column2_item:hover {
     justify-content: center;
 }
 
-#video_work_block_line {
-    width: 99px;
-    height: 8px;
-    background-color: var(--main_blue);
-    margin-top: 19px;
-}
 
 #news_block_titles1 {
     height: 56px;
@@ -689,6 +714,31 @@ div.services_block_column2_item:hover {
     outline: 8px solid var(--main_blue);
 }
 
+#news_block_titles2_text:after {
+    content: var(--news_block_change_text_2a);
+}
+
+#news_block_titles3_text:after {
+    content: var(--news_block_change_text_3a);
+}
+
+#news_block_titles4_text:after {
+    content: var(--news_block_change_text_4a);
+}
+
+#news_block_titles5_text:after {
+    content: var(--news_block_change_text_5a);
+}
+
+#news_block_titles6_text:after {
+    content: var(--news_block_change_text_6a);
+}
+
+#news_block_titles7_text:after {
+    content: var(--news_block_change_text_7a);
+}
+
+
 .news_block_titles {
     color: var(--news_blue_to_white);
     font-family: 'Roboto Condensed', sans-serif;
@@ -723,7 +773,7 @@ div.services_block_column2_item:hover {
     border-radius: 0 0 4px 4px;
 }
 
-.news_block_info_logo {
+#news_block_info_logo1 {
     position: absolute;
     margin: 215px -145px;
     z-index: var(--news_block_zindex_logo);
@@ -775,7 +825,7 @@ div.services_block_column2_item:hover {
 Block testimonial start
 */
 #testimonial_block {
-    height: 480px;
+    height: 421px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -808,7 +858,7 @@ Block testimonial start
 
 #testimonial_block_author {
     padding-top: 30px;
-    padding-bottom: 80px;
+    padding-bottom: 36px;
     font-family: 'Roboto Condensed', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -964,7 +1014,7 @@ Block footer start
 }
 
 #footer_block a:link {
-text-decoration: none;
+    text-decoration: none;
 }
 
 #footer_block a:visited {
@@ -994,6 +1044,7 @@ text-decoration: none;
     height: 100px;
 }
 
+/*INTRO BLOCK*/
 #intro_block_up_arrow1 {
     height: 15px;
     width: 15px;
@@ -1032,4 +1083,7 @@ text-decoration: none;
     display: flex;
     flex-direction: column;
     justify-content: end;
+}
+
+#intro_block_div {
 }

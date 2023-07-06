@@ -56,8 +56,19 @@
         </div>
     </div>
 
+    <div id="intro_carousel_block">
+        <div class="owl-carousel owl-theme" id="intro_carousel">
+            <div class="item" id="intro_carousel_item1" ><h4>1</h4></div>
+            <div class="item"style="background: green"><h4>2</h4></div>
+            <div class="item" style="background: mediumpurple"><h4>3</h4></div>
+        </div>
+    </div>
+
+
     <div id="intro_block">
+
         <div id="intro_block_column2">
+
             <h1 id="intro_block_title_main">МЫСЛИ<br>ГЛОБАЛЬНО</h1>
             <h4 id="intro_block_text_main">Di Gi - это диджитал агенство полного цикла, направленное на самый лучший<br>рузультат
                 наших клиентов в маркетинге, продажах и управлнии</h4>
@@ -443,8 +454,6 @@
     <section id="space_block">
 
     </section>
-
-
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -453,5 +462,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:1
+            }
+        },
+        navText : ["<div id='intro_block_up_arrow'></div>","<div id='intro_block_down_arrow'></div>\""]
+
+    })
+</script>
 </body>
 </html>

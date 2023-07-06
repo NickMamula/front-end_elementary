@@ -1106,6 +1106,18 @@ Block footer start
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+}#intro_carousel_item2 {
+    height:668px;
+    background-image: url('../images/intro_block_background2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}#intro_carousel_item3 {
+    height:668px;
+    background-image: url('../images/intro_block_background3.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .owl-dots {
@@ -1116,8 +1128,9 @@ Block footer start
 
 .owl-theme .owl-nav {
     position: absolute;
-    margin-left: -20px;
+    float:right;
+    margin-left: 95%;
     margin-top: -334px;
-    padding-left: 100%;
-    background: white;
+    /* padding-left: 100%; */
+    background: transparent;
 }

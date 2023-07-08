@@ -124,7 +124,7 @@ Block intro start
 }
 
 
-#intro_block_title_main {
+.intro_block_title_main {
     font-style: normal;
     margin: 0;
     font-size: 95px;
@@ -136,8 +136,8 @@ Block intro start
     color: var(--main_white);
 }
 
-#intro_block_text_main {
-
+.intro_block_text_main {
+    margin-top: 26px;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -146,20 +146,19 @@ Block intro start
     color: var(--main_white);
 }
 
-#intro_block_button {
+.intro_block_button {
     width: 200px;
     height: 50px;
     border-color: var(--main_blue);
     border-radius: 3px;
     color: var(--main_white);
     background-color: var(--main_blue);
-    margin-top: 2em;
-    margin-left: 550px;
+    margin-top: 33px;
+    font-size: 21px;
     transition: all 400ms ease;
-
 }
 
-#intro_block_button:hover {
+.intro_block_button:hover {
     background-color: var(--main_grey);
     color: var(--main_blue);
 }
@@ -1109,6 +1108,9 @@ Block footer start
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #intro_carousel_item2 {
@@ -1117,6 +1119,11 @@ Block footer start
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 }
 
 #intro_carousel_item3 {
@@ -1125,19 +1132,30 @@ Block footer start
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 }
 
 .owl-dots {
-    margin-top: -175px;
-    z-index: 6;
+    margin-top: -93px;
+    z-index: 1;
     position: relative;
+
 }
 
 .owl-theme .owl-nav {
     position: absolute;
     float: right;
-    margin-left: 95%;
-    margin-top: -334px;
+    margin: -404px 0 0 95%;
     /* padding-left: 100%; */
     background: transparent;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots  span{
+    border: 2px solid;
+    border-color:#D6D6D6;
+    background: transparent;
+
 }

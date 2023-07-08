@@ -51,14 +51,20 @@ Block header start
 .header_block {
     position: relative;
     height: 100px;
+    width: 100%;
     background-color: var(--main_blue);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
 }
+
 
 #logo_dc {
     margin: 0;
     position: absolute;
     top: 50%;
-    left: 1em;
+    left: 60px;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
@@ -68,13 +74,9 @@ Block header start
     width: 40px;
     background-color: white;
     border-radius: 2px;
-    margin: auto;
-    position: absolute;
+    margin-right: 150px;
     top: 50%;
-    right: 150px;
     -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    display: flex;
     justify-content: center;
 }
 
@@ -84,6 +86,7 @@ Block header start
 
 
 #header_menu_button_logo {
+    padding-top: 5px;
     margin: 10px 14px 16px;
     display: block;
 }
@@ -260,6 +263,82 @@ Block intro start
     background-color: var(--main_white);
 }
 
+/*Add carousel*/
+
+.item {
+    width: 100%;
+    height: 100%;
+}
+
+#intro_carousel_item1 {
+    height: 668px;
+    background-image: url('../images/intro_block_background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#intro_carousel_item2 {
+    height: 668px;
+    background-image: url('../images/intro_block_background2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
+#intro_carousel_item3 {
+    height: 668px;
+    background-image: url('../images/intro_block_background3.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
+.owl-dots {
+    margin-top: -93px;
+    z-index: 1;
+    position: relative;
+
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    color: #FFF;
+    font-size: 14px;
+    margin: -3px;
+    padding: 4px 7px;
+    background: #D6D6D6;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.owl-theme .owl-nav {
+    position: absolute;
+    float: right;
+    margin: -404px 0 0 95%;
+    background: transparent;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots  span{
+    border: 2px solid;
+    border-color:#D6D6D6;
+    background: transparent;
+
+}
+
+/*PROMO BLOCK*/
 
 #promo_block {
     height: 192px;
@@ -1092,70 +1171,4 @@ Block footer start
     display: flex;
     flex-direction: column;
     justify-content: end;
-}
-
-#intro_block_div {
-}
-
-.item {
-    width: 100%;
-    height: 100%;
-}
-
-#intro_carousel_item1 {
-    height: 668px;
-    background-image: url('../images/intro_block_background.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#intro_carousel_item2 {
-    height: 668px;
-    background-image: url('../images/intro_block_background2.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
-}
-
-#intro_carousel_item3 {
-    height: 668px;
-    background-image: url('../images/intro_block_background3.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
-}
-
-.owl-dots {
-    margin-top: -93px;
-    z-index: 1;
-    position: relative;
-
-}
-
-.owl-theme .owl-nav {
-    position: absolute;
-    float: right;
-    margin: -404px 0 0 95%;
-    /* padding-left: 100%; */
-    background: transparent;
-}
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots  span{
-    border: 2px solid;
-    border-color:#D6D6D6;
-    background: transparent;
-
 }

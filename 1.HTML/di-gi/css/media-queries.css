@@ -190,7 +190,7 @@
         background-color: var(--main_white);
     }
 
-    #intro_line {
+    .intro_line {
         display: block;
         width: 68px;
         height: 7px;

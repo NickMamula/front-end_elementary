@@ -1173,7 +1173,7 @@ Block footer start
     justify-content: end;
 }
 
-#intro_line {
+.intro_line {
     display: none;
     width: 99px;
     height: 8px;

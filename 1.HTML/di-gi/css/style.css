@@ -1172,3 +1172,13 @@ Block footer start
     flex-direction: column;
     justify-content: end;
 }
+
+#intro_line {
+    display: none;
+    width: 99px;
+    height: 8px;
+    background-color: var(--main_blue);
+
+    margin-top: 30px;
+    margin-left: 62px;
+}

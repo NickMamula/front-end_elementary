@@ -1,0 +1,45 @@
+:root {
+    --main_blue: #2B4074;
+    --main_white: #FFFFFF;
+}
+
+.task_block {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    background-color: aliceblue;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+#task1_div {
+    display: unset;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin: 20px;
+}
+
+.task1_button {
+    width: 80px;
+    height: 30px;
+    margin: 5px;
+    color: black;
+}
+
+#task2_div {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin: 20px;
+    transition: opacity .5s;
+}
+/*TASK 3*/
+.task3_five_blocks {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin: 20px;
+    transition: opacity .5s;
+}

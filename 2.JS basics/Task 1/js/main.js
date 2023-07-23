@@ -42,7 +42,7 @@ function task3Function() {
     if (visibleDiv3 === true) {
         const fiveBlocks = document.querySelectorAll(`.task3_five_blocks`);
         fiveBlocks.forEach(div => {
-           div.style.opacity="0";
+            div.style.opacity = "0";
         });
         visibleDiv3 = false;
         return;
@@ -50,7 +50,22 @@ function task3Function() {
     if (visibleDiv3 === false) {
         const fiveBlocks = document.querySelectorAll(`.task3_five_blocks`);
         fiveBlocks.forEach(div => {
-            div.style.opacity="1";
-        });        visibleDiv3 = true;
+            div.style.opacity = "1";
+        });
+        visibleDiv3 = true;
+    }
+}
+
+/*TASK 4*/
+
+function task4Function() {
+    const querySelector = document.getElementById("task4_input").value;
+    console.log(querySelector);
+    const opacity = document.getElementById(querySelector).style.opacity;
+    console.log(opacity);
+    if (opacity > 0) {
+        document.getElementById(querySelector).style.opacity = "0";
+    } else {
+        document.getElementById(querySelector).style.opacity = "1";
     }
 }

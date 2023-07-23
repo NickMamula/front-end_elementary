@@ -6,7 +6,7 @@
 .task_block {
     display: flex;
     flex-direction: row;
-    height: 300px;
+    height: 160px;
     background-color: aliceblue;
     align-items: center;
     border-radius: 20px;
@@ -34,6 +34,7 @@
     background-color: black;
     margin: 20px;
     transition: opacity .5s;
+    opacity: 0.2;
 }
 /*TASK 3*/
 .task3_five_blocks {
@@ -42,4 +43,9 @@
     background-color: black;
     margin: 20px;
     transition: opacity .5s;
+}
+/*TASK 4*/
+
+#task4_input {
+    margin-left: 20px;
 }

@@ -28,58 +28,102 @@
           rel="stylesheet">
 </head>
 <body>
-<div>
 
-    <section id="basics">
-        <div class="task_block">
-            <div class="div_visible_class" id="task1_div" style="opacity: 1">
-                <p style="color: white">Task 1</p>
-            </div>
-            <button class="task1_button" id="task1_button_css" onclick="myFunction()">CSS</button>
-            <button class="task1_button" onclick="myFunction2()">JS</button>
-            <button class="task1_button" onclick="myFunction3()"> JS + CSS</button>
-        </div>
-
-        <div class="task_block">
-            <div id="task2_div" style="opacity: 1">
-                <p style="color: white">Task 2</p>
-            </div>
-            <button class="task1_button" id="task2_button" onclick="task2Function()">JS + CSS</button>
-        </div>
-
-        <div class="task_block">
-
-            <div class="task3_five_blocks">
-                <p style="color: white">Task 3</p>
-            </div>
-            <div class="task3_five_blocks">
-                <p style="color: white">Task 3</p>
-            </div>
-            <div class="task3_five_blocks">
-                <p style="color: white">Task 3</p>
-            </div>
-            <div class="task3_five_blocks">
-                <p style="color: white">Task 3</p>
-            </div>
-            <div class="task3_five_blocks">
-                <p style="color: white">Task 3</p>
-            </div>
-
-            <button class="task1_button" id="task3_button" onclick="task3Function()">5 blocks</button>
-
-        </div>
-
-        <div class="task_block">
-            <input id="task4_input">
-            <button class="task1_button" onclick="task4Function()">On/Off</button>
-        </div>
-
-    </section>
+<div class="task_block">
+    <div class="div_visible_class" id="task1_div" style="opacity: 1">
+        <p style="color: white">Task 1</p>
+    </div>
+    <button class="task1_button" id="task1_button_css" onclick="myFunction()">CSS</button>
+    <button class="task1_button" onclick="myFunction2()">JS</button>
+    <button class="task1_button" onclick="myFunction3()"> JS + CSS</button>
 </div>
 
+<div class="task_block">
+    <div id="task2_div" style="opacity: 1">
+        <p style="color: white">Task 2</p>
+    </div>
+    <button class="task1_button" id="task2_button" onclick="task2Function()">JS + CSS</button>
+</div>
+
+<div class="task_block">
+
+    <div class="task3_five_blocks" style="opacity: 1">
+        <p style="color: white">Task 3</p>
+    </div>
+    <div class="task3_five_blocks">
+        <p style="color: white">Task 3</p>
+    </div>
+    <div class="task3_five_blocks">
+        <p style="color: white">Task 3</p>
+    </div>
+    <div class="task3_five_blocks">
+        <p style="color: white">Task 3</p>
+    </div>
+    <div class="task3_five_blocks">
+        <p style="color: white">Task 3</p>
+    </div>
+
+    <button class="task1_button" id="task3_button" onclick="task3Function()">5 blocks</button>
+
+</div>
+
+<div class="task_block">
+    <label for="task4_input"></label><input id="task4_input" placeholder="task4 input query selector"
+                                            value="#task2_div">
+    <button class="task1_button" onclick="task4Function()">On/Off</button>
+</div>
+
+<div class="task_block">
+    <div id="task5_div" onclick="a()">
+        <p style="color:black">Task 5</p>
+    </div>
+    <p>Додати на сторінку жовтий квадрат, і зробити так,<br>
+        щоб при натиску на нього вперше виводився напис "Привіт" (alert),<br>
+        а при другому натиску цей квадрат зникав (потрібно міняти функцію обробник,<br>
+        видаляти першу і ставити другу)</p>
+</div>
+
+<div class="task_block">
+    <div id="task6_div">
+    </div>
+    <button class="task1_button" id="task6_button">Task6</button>
+    <p>Додати на сторінку червоний квадрат 50х50 px,<br>який буде з'являтися як тільки людина наводить курсор на
+        кнопку,<br> і ховатися як людина прибирає курсор з кнопки</p>
+</div>
+
+<div class="task_block">
+    <div id="task7_div" style="opacity: 0"></div>
+    <label for="task7_input"></label><input id="task7_input" placeholder="task7" style="margin: 20px">
+    <p> Додати на сторінку зелений прямокутник 50х20 px,<br>
+        який з'являтиметься як тільки людина фокусується на інпуті та зникати<br>
+        як тільки людина починає писати текст у цей інпут.</p><br>
+</div>
+
+<div class="task_block">
+    <label for="task8_input"></label><input id="task8_input" placeholder="write image link" style="margin: 20px"
+                                            value="https://itvdn.blob.core.windows.net/specialities-covers/js-2334a083-e167-456a-a15e-d1920561b06a.png">
+    <button class="task1_button" id="task8_button">Task 8</button>
+    <img src="https://timeweb.com/ru/community/article/5d/5dea5ac04cd2c5392c0528ad075dca69.jpg"
+         style="width: auto;margin: 20px" id="task8_image" height="130px" alt="Image from link">
+
+    <p> Додати на сторінку інпут та кнопку. <br>
+        Якщо в інпут покласти посилання і натиснути на кнопку,<br>
+        то на сторінці з'явиться картинка отримана за посиланням, <br>
+        яке ввели в інпут.
+</div>
+
+<div class="task_block">
+    <textarea id="task9_textarea" style="margin: 20px;height:120px;width: 360px" placeholder="INPUT IMAGE LINK"></textarea>
+    <button class="task1_button" id="task9_button">Task 9</button>
+    <p>
+        Перетворити інпут на textarea, в яку можна вводити посилання, кожне з нового рядка.<br>
+        При натисканні на кнопку на сторінці з'явиться стільки картинок, <br>
+        скільки посилань ввели в textarea (картинки беруться за посиланнями).
+    </p>
+</div>
+
+<div class="task_block" id="task9_div_for_picture"></div>
 
 <script src="js/main.js"></script>
-
-
 </body>
 </html>

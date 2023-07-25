@@ -90,10 +90,10 @@ let a = function () {
 /*TASK 6*/
 let task6button = document.querySelector(`#task6_button`);
 let task6div = document.querySelector(`#task6_div`);
-task6button.onmouseover = function() {
+task6button.onmouseover = function () {
     task6div.style.opacity = '1';
 };
-task6button.onmouseout = function() {
+task6button.onmouseout = function () {
     task6div.style.opacity = '0';
 };
 
@@ -101,45 +101,122 @@ task6button.onmouseout = function() {
 let task7div = document.querySelector(`#task7_div`);
 let task7input = document.querySelector(`#task7_input`);
 
-task7input.onmouseover = function (){
+task7input.onmouseover = function () {
     task7div.style.opacity = `1`;
 };
 
-task7input.addEventListener("input", function (){
-   task7div.style.opacity =`0`;
+task7input.addEventListener("input", function () {
+    task7div.style.opacity = `0`;
 });
 
 /*TASK 8*/
 let task8input = document.querySelector(`#task8_input`);
-let task8div = document.querySelector(`#task8_div`);
 let task8button = document.querySelector(`#task8_button`);
-let task8Image =document.querySelector(`#task8_image`);
+let task8Image = document.querySelector(`#task8_image`);
 
-task8button.addEventListener("click",function (){
+task8button.addEventListener("click", function () {
     task8Image.src =
         "https://itvdn.blob.core.windows.net/specialities-covers/js-2334a083-e167-456a-a15e-d1920561b06a.png";
     const task8inputValue = task8input.value || null;
     if (task8inputValue === null) return;
     console.log(task8inputValue);
-    task8Image.src =task8inputValue;
+    task8Image.src = task8inputValue;
 })
 
 /*TASK 9*/
 let task9textArea = document.querySelector(`#task9_textarea`);
 let task9difForImages = document.querySelector(`#task9_div_for_picture`);
-let task9button =document.querySelector(`#task9_button`);
+let task9button = document.querySelector(`#task9_button`);
 
-task9button.addEventListener(`click`,function (){
-   let textAreaValue = task9textArea.value;
+task9button.addEventListener(`click`, function () {
+    let textAreaValue = task9textArea.value;
     console.log(textAreaValue);
-    // Create an "img" node:
-    const node = document.createElement("img");
-    node.src=textAreaValue;
-    node.style.width=`auto`;
-    node.style.height=`120px`;
-    task9difForImages.appendChild(node);
+    let linkArray = textAreaValue.split(String.fromCharCode(10));
+
+    for (let i = 0; i < linkArray.length; i++) {
+        const node = document.createElement("img");
+        node.src = linkArray[i];
+        node.style.width = `auto`;
+        node.style.height = `120px`;
+        node.style.marginLeft = `20px`;
+        task9difForImages.appendChild(node);
+    }
 
 });
 
+/*TASK 10*/
+let task10Paragraph = document.querySelector(`#task10_paragraph1`);
+onmousemove = (e) => task10Paragraph.innerHTML = "X: " + e.x + ", Y:" + e.y;
 
+let task10Paragraph2 = document.querySelector(`#task10_paragraph2`);
+task10Paragraph2.innerHTML = "Browser language: " + (new Intl.DisplayNames(['en'], {type: 'language'}).of(navigator.language));
+
+
+navigator.geolocation.getCurrentPosition(success);
+let task10Paragraph3 = document.querySelector(`#task10_paragraph3`);
+
+function success(pos) {
+    const crd = pos.coords;
+    task10Paragraph3.innerHTML = "Ш: " + crd.latitude + ", Д: " + crd.longitude;
+}
+
+/*TASK 13*/
+let task13Local = document.querySelector(`#task13_localstorage`);
+task13Local.addEventListener("input", ale);
+
+function ale() {
+    window.localStorage.setItem("local_storage", JSON.stringify(task13Local.value));
+}
+
+/*Cookies*/
+let task13Cookies = document.querySelector(`#task13_cookie`);
+task13Cookies.addEventListener("input", aleCookies);
+
+function aleCookies() {
+    const d = new Date();
+    d.setTime(d.getTime() + (900));
+    document.cookie = `cookies_storage=${task13Cookies.value.split(`\n`).join(`\\`)};${d}`;
+}
+
+/*SessionStorage*/
+let task13sessionStorage = document.querySelector(`#task13_sessionStorage`);
+task13sessionStorage.addEventListener("input", aleSessionStorage);
+
+function aleSessionStorage() {
+    sessionStorage.setItem(`itemSessionS`, task13sessionStorage.value);
+}
+
+/*Invent onLoad to all blocks*/
+function myLoad() {
+    let a = window.localStorage.getItem(`local_storage`);
+    task13Local.innerHTML = JSON.parse(a);
+    let temp = document.cookie;
+    temp = temp.split("=");
+    task13Cookies.innerHTML = temp[1].split(`\\`).join('\n');
+    //sessionStorage
+    task13sessionStorage.innerHTML = sessionStorage.getItem(`itemSessionS`);
+}
+
+window.addEventListener("load", myLoad);
+
+/*TASK 14*/
+window.onscroll = function () {
+    let currentScreenHeight = window.scrollY + window.innerHeight;
+    let pageHeight = document.body.scrollHeight;
+    let sensitive =50;
+    if(pageHeight-sensitive<currentScreenHeight){
+        document.querySelector(`#task14_a_button`).style.opacity = `1`;
+    }
+
+};
+
+/*TASK 15 block in block*/
+let task15bigDiv = document.querySelector(`#task15_big_div`);
+let task15smallDiv = document.querySelector(`#task15_small_div`);
+
+task15bigDiv.addEventListener("click",task15Function);
+function task15Function(event) {
+    let text = event.target.id;
+    alert(`You click ${text}`)
+}
 

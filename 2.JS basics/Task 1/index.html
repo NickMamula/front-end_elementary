@@ -36,6 +36,12 @@
     <button class="task1_button" id="task1_button_css" onclick="myFunction()">CSS</button>
     <button class="task1_button" onclick="myFunction2()">JS</button>
     <button class="task1_button" onclick="myFunction3()"> JS + CSS</button>
+    <div id="task10_div">
+        <p id="task10_paragraph">Task 10-12</p>
+        <p id="task10_paragraph1">Х: 123, У: 984</p>
+        <p id="task10_paragraph2">language</p>
+        <p id="task10_paragraph3">Ш: 34.23234, Д: 78.239482034</p>
+    </div>
 </div>
 
 <div class="task_block">
@@ -113,7 +119,13 @@
 </div>
 
 <div class="task_block">
-    <textarea id="task9_textarea" style="margin: 20px;height:120px;width: 360px" placeholder="INPUT IMAGE LINK"></textarea>
+    <label for="task9_textarea"></label><textarea id="task9_textarea" style="margin: 20px;height:120px;width: 360px"
+                                                  placeholder="INPUT IMAGE LINK">
+        https://itvdn.blob.core.windows.net/specialities-covers/js-2334a083-e167-456a-a15e-d1920561b06a.png
+        https://timeweb.com/ru/community/article/5d/5dea5ac04cd2c5392c0528ad075dca69.jpg
+        https://itvdn.blob.core.windows.net/specialities-covers/js-2334a083-e167-456a-a15e-d1920561b06a.png
+        https://timeweb.com/ru/community/article/5d/5dea5ac04cd2c5392c0528ad075dca69.jpg
+    </textarea>
     <button class="task1_button" id="task9_button">Task 9</button>
     <p>
         Перетворити інпут на textarea, в яку можна вводити посилання, кожне з нового рядка.<br>
@@ -124,6 +136,42 @@
 
 <div class="task_block" id="task9_div_for_picture"></div>
 
+<div class="task_block">
+    <label for="task13_localstorage"></label><textarea class="task13_textarea" id="task13_localstorage"
+                                                       placeholder="task13 localStorage"></textarea>
+    <label for="task13_cookie"></label><textarea class="task13_textarea" id="task13_cookie"
+                                                 placeholder="cookies"></textarea>
+    <label for="task13_sessionStorage"></label><textarea class="task13_textarea" id="task13_sessionStorage"
+                                                         placeholder="sessionStorage"></textarea>
+</div>
+
+<div class="task_block">
+    <p style="color:black;margin: 30px;">Task 15</p>
+    <div id="task15_big_div">
+        <div id="task15_small_div"></div>
+    </div>
+</div>
+
+<div class="task_block" id="task14_div">
+    <p style="color:black">Task 14</p>
+    <a class="a_button" id="task14_a_button" href="#task10_div" style="opacity: 0;">Up &#8682</a>
+</div>
+
+
 <script src="js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    let $root = $('html, body');
+    $('a[href^="#"]').click(function () {
+        $root.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+
+        return false;
+    });
+</script>
 </body>
 </html>

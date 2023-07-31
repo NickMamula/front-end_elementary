@@ -203,8 +203,8 @@ window.addEventListener("load", myLoad);
 window.onscroll = function () {
     let currentScreenHeight = window.scrollY + window.innerHeight;
     let pageHeight = document.body.scrollHeight;
-    let sensitive =50;
-    if(pageHeight-sensitive<currentScreenHeight){
+    let sensitive = 50;
+    if (pageHeight - sensitive < currentScreenHeight) {
         document.querySelector(`#task14_a_button`).style.opacity = `1`;
     }
 
@@ -214,9 +214,114 @@ window.onscroll = function () {
 let task15bigDiv = document.querySelector(`#task15_big_div`);
 let task15smallDiv = document.querySelector(`#task15_small_div`);
 
-task15bigDiv.addEventListener("click",task15Function);
+task15bigDiv.addEventListener("click", task15Function);
+
 function task15Function(event) {
     let text = event.target.id;
     alert(`You click ${text}`)
 }
 
+/*TASK 16*/
+let task16button = document.querySelector(`#task16button`);
+let task16divAlert = document.querySelector(`#task16divAlert`);
+task16button.addEventListener(`click`, divAlertPositionTask16);
+
+function divAlertPositionTask16() {
+    console.log(window.scrollY + `px` + window.innerHeight)
+    task16divAlert.style = `display:flex;position=absolute`;
+    task16divAlert.style.top = window.scrollY + (window.innerHeight - task16divAlert.offsetHeight) / 2 + `px`;
+    task16divAlert.style.left = (window.innerWidth - task16divAlert.offsetWidth) / 2 + `px`;
+    task16divAlert.addEventListener(`click`, () => {
+        task16divAlert.style.display = `none`;
+        window.onscroll = function () {
+            window.scrollTo();
+        };
+    });
+    let x=window.scrollX;
+    let y=window.scrollY;
+    window.onscroll = function () {
+
+        window.scrollTo(x, y);
+    };
+}
+/*TASK 18*/
+
+/*From tutorial https://foolishdeveloper.com/drag-and-drop-file-upload-avascript/*/
+let uploadButton = document.getElementById("upload-button");
+let chosenImage = document.getElementById("chosen-image");
+let fileName = document.getElementById("file-name");
+let container = document.querySelector(".container");
+let error = document.getElementById("error");
+let imageDisplay = document.getElementById("image-display");
+
+const fileHandler = (file, name, type) => {
+    if (type.split("/")[0] !== "image") {
+        //File Type Error
+        error.innerText = "Please upload an image file";
+        return false;
+    }
+    error.innerText = "";
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+        //image and file name
+        let imageContainer = document.createElement("figure");
+        let img = document.createElement("img");
+        img.src = reader.result;
+        imageContainer.appendChild(img);
+        imageContainer.innerHTML += `<figcaption>${name}</figcaption>`;
+        imageDisplay.appendChild(imageContainer);
+    };
+};
+uploadButton.addEventListener("change", () => {
+    imageDisplay.innerHTML = "";
+    Array.from(uploadButton.files).forEach((file) => {
+        fileHandler(file, file.name, file.type);
+    });
+});
+container.addEventListener(
+    "dragenter",
+    (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        container.classList.add("active");
+    },
+    false
+);
+container.addEventListener(
+    "dragleave",
+    (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        container.classList.remove("active");
+    },
+    false
+);
+container.addEventListener(
+    "dragover",
+    (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        container.classList.add("active");
+    },
+    false
+);
+container.addEventListener(
+    "drop",
+    (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        container.classList.remove("active");
+        let draggedData = e.dataTransfer;
+        let files = draggedData.files;
+        imageDisplay.innerHTML = "";
+        Array.from(files).forEach((file) => {
+            fileHandler(file, file.name, file.type);
+        });
+    },
+    false
+);
+
+window.onload = () => {
+    error.innerText = "";
+};

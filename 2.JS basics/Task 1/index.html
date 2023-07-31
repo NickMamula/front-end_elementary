@@ -152,6 +152,37 @@
     </div>
 </div>
 
+<div class="task_block">
+    <p style="color:black;margin: 30px;">Task 16<br>
+        Зробити кнопку, по натисканні на яку з'являється напівпрозорий сірий квадрат на весь екран і<br>
+        не можна було скролити сторінку поки він не сховається. <br>
+        Приховувати квадрат після натискання на нього.</p>
+    <button class="task1_button" id="task16button">Add block</button>
+    <div id="task16divAlert"></div>
+</div>
+
+<div class="task_block" id="task17div">
+    <p style="color:black;margin: 30px;">Task 17<br>
+        Зробити так, щоб при натисканні на кнопку "GO" не перезавантажувалася сторінка.</p>
+    <form><input type="submit" value="GO"></form>
+</div>
+
+<div class="task_block" style="height: 500px;">
+    <p style="color:black;margin: 30px;">Task 18<br>
+        Зробити гарний інпут type="file". Зробити, щоб при перетягуванні файлу<br>
+        на цей інпут він красиво змінювався (drag-n-drop). <br>
+        Ну і коли файл вже вибрано теж.</p>
+    <div class="container">
+        <input type="file" id="upload-button" multiple accept="image/*"/>
+        <label class="task18_label" for="upload-button">
+            <i class="fa-solid fa-upload"></i>&nbsp; Drag or drop files
+        </label>
+        <div id="error"></div>
+        <div id="image-display"></div>
+    </div>
+</div>
+
+
 <div class="task_block" id="task14_div">
     <p style="color:black">Task 14</p>
     <a class="a_button" id="task14_a_button" href="#task10_div" style="opacity: 0;">Up &#8682</a>
@@ -173,5 +204,6 @@
         return false;
     });
 </script>
+
 </body>
 </html>

@@ -36,6 +36,7 @@
     transition: opacity .5s;
     opacity: 0.2;
 }
+
 /*TASK 3*/
 .task3_five_blocks {
     width: 100px;
@@ -44,6 +45,7 @@
     margin: 20px;
     transition: opacity .5s;
 }
+
 /*TASK 4*/
 
 #task4_input {
@@ -59,14 +61,14 @@
 
 #task6_div {
     width: 50px;
-    height:50px;
+    height: 50px;
     margin: 20px;
     background-color: red;
 }
 
 #task7_div {
     width: 50px;
-    height:20px;
+    height: 20px;
     margin: 20px;
     background-color: forestgreen;
     transition: opacity .5s;
@@ -75,13 +77,14 @@
 
 #task8_div {
     width: 120px;
-    height:120px;
+    height: 120px;
     margin: 20px;
     transition: opacity .5s;
 }
+
 /*TASK 10*/
 #task10_div {
-    width:360px;
+    width: 360px;
     height: 100%;
     background-color: #cccccc;
     margin-left: auto;
@@ -91,23 +94,25 @@
 #task10_paragraph1 {
     width: 100%;
     font-size: 22px;
-    color:white;
+    color: white;
     background-color: #2B4074;
 }
 
 #task10_paragraph2 {
     width: 100%;
-    margin-top:5px;
+    margin-top: 5px;
     font-size: 22px;
     letter-spacing: 1px;
-    color:white;
+    color: white;
     background-color: #2B4074;
-}#task10_paragraph3 {
+}
+
+#task10_paragraph3 {
     width: 100%;
-    margin-top:5px;
+    margin-top: 5px;
     font-size: 22px;
     letter-spacing: 1px;
-    color:white;
+    color: white;
     background-color: #2B4074;
 }
 
@@ -115,10 +120,10 @@
 .task13_textarea {
     width: 33%;
     height: 100%;
-    margin:10px;
+    margin: 10px;
 }
 
-textarea::placeholder{
+textarea::placeholder {
     font-size: 40px;
     text-align: center;
 }
@@ -163,4 +168,88 @@ textarea::placeholder{
     background-color: forestgreen;
     width: 65px;
     height: 65px;
+}
+
+#task16button {
+    width: 80px;
+    height: 40px;
+}
+
+#task16divAlert {
+    top: 50px;
+    left: 50px;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    z-index: 2;
+    background-color: lightslategrey;
+    opacity: 0.3;
+    display: none;
+}
+
+#t18Input {
+    width: 200px;
+    height: 140px;
+    background-color: lightslategrey;
+}
+
+/*TASK 19*/
+
+
+.container {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    background-color: #ffffff;
+    width: 60%;
+    min-width: 27.5em;
+    padding: 5.12em 3.87em;
+    transform: translate(-1%, -1%);
+    box-shadow: 0 1.25em 3.43em rgba(0, 0, 0, 0.08);
+    border-radius: 0.5em;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.task18_label {
+    display: block;
+    position: relative;
+    background-color: #025bee;
+    color: #ffffff;
+    font-size: 1.1em;
+    text-align: center;
+    width: 16em;
+    padding: 1em 0;
+    border-radius: 0.3em;
+    margin: 0 auto 1em auto;
+    cursor: pointer;
+}
+#image-display {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.25em;
+    flex-wrap: wrap;
+}
+#image-display figure {
+    width: 45%;
+}
+#image-display img {
+    width: 100%;
+}
+#image-display figcaption {
+    font-size: 0.8em;
+    text-align: center;
+    color: #5a5861;
+}
+.active {
+    border: 0.3em dashed #025bee;
+}
+#error {
+    text-align: center;
+    color: #ff3030;
 }

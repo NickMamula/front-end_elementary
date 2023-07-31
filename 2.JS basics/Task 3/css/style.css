@@ -1,0 +1,15 @@
+:root {
+    --main_blue: #2B4074;
+    --main_white: #FFFFFF;
+}
+
+.task_block {
+    display: flex;
+    flex-direction: row;
+    height: 160px;
+    background-color: aliceblue;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+

@@ -8,5 +8,5 @@ Each folder has a project you can open it in WebStorm.
       <li>1.Task 3 - simple CSV parser with special conditions.</li>
     </ul>
   </li>
-  <li>3.Data tables - fast create table from object data with only javascript and condition of any counts of row,columns.</li>
+  <li>3.Data tables - library to fast create table from object data with only javascript and condition of any counts of row,columns.</li>
 </ul>

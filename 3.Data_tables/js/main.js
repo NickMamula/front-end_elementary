@@ -92,9 +92,7 @@ async function DataTable(config) {
             //to delete functionality console.log(cell.innerHTML, row.rowIndex, cell.cellIndex, `Title: ` + cell.title);
             if (cell.title === `delete`) {
                 deleteRow(cell.id);
-                (async function () {
-                    await DataTable(config1);
-                })();
+                reloadTable();
             }
         });
 
@@ -118,7 +116,6 @@ async function DataTable(config) {
             if (item.value !== `delete`) {
                 newCell.addEventListener('keypress', function (e) {
                     if (e.key === 'Enter') {                                                   //input when click enter
-                        console.log(e.target.value);
                         userDefault[e.target.title] = e.target.value;
 
                         let rowCorrect = true;                                        //if true row POST
@@ -131,9 +128,14 @@ async function DataTable(config) {
                             postUser();
                             reloadTable();
                         } else {
-                            Object.values(userDefault).map(item => {
-                                if (item === 0) {
-                                    
+                            Object.keys(userDefault).map(item => {
+                                if (userDefault[item] === ``) {
+                                    let emptyInput = document.querySelector(`[title="${item}"]`);
+                                    emptyInput.className = `input_cell_empty`;
+                                    emptyInput.placeholder =`Input Data!`;
+                                }else {
+                                    let emptyInput = document.querySelector(`[title="${item}"]`);
+                                    emptyInput.className = `inputCell`;
                                 }
                             })
                         }
@@ -204,5 +206,6 @@ const users = [{id: 30050, name: 'Вася', surname: 'Петров', age: 12}, 
 function reloadTable() {
     (async function () {
         await DataTable(config1);
+        location.reload();
     })();
 }

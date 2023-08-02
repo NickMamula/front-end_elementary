@@ -9,4 +9,6 @@ Each folder has a project you can open it in WebStorm.
     </ul>
   </li>
   <li>3.Data tables - library to fast create table from object data with only javascript and condition of any counts of row,columns.</li>
+  <li>4.HTTP. Requests Backends -contain project to edit table with backend functionalitty such add row and delete row.</li>
+
 </ul>

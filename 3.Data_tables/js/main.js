@@ -21,22 +21,24 @@ async function DataTable(config) {
 
     createBody();    //we create innerHTML code of table body
 
-    //create table and append to div
     const ourConfigDiv = document.querySelector(`${config.parent}`);
-    ourConfigDiv.innerHTML=``;
-    let table = document.createElement("table");
+    ourConfigDiv.innerHTML = ``;
+    let table = document.createElement(`table`);
+    table.id = `tableId`;
+
+    //create button add row
+    let buttonAddEmptyRow = document.createElement(`button`);
+    buttonAddEmptyRow.addEventListener(`click`, () => {
+        putRow();
+    });
+    buttonAddEmptyRow.innerHTML = `Додати`;
+    buttonAddEmptyRow.className = `buttonAddEmptyRow`;
+    ourConfigDiv.appendChild(buttonAddEmptyRow);
 
     addOnClick(table);
-
-    //set innerHTML to table
     ourConfigDiv.appendChild(table);
-
-    //add style to table
+    table.className = `table`; //add style to table
     table.innerHTML = tableHead + tableBody;
-    table.style.width = '1000px';
-    table.style.height = '200px';
-    table.style.border = '1px solid black';
-    table.style.margin = `33px`;
 
     function createHead() {
         config.columns.map(value => {
@@ -53,11 +55,11 @@ async function DataTable(config) {
             Object
                 .entries(value)
                 .map(item => {
-                    row = row + `<td ${tableStyle}>${item[1]}</td>`;
+                    row = row + `<td class="cell" ${tableStyle}>${item[1]}</td>`;
                     //  console.log(item[1]);
                 })
-            row = row + `<td id=${userId} title="delete"
-        style="width: 90px;background-color: rgba(235,1,9,0.78);border: 2px solid;">User ${userId} delete</td></tr>`;
+            row = row + `<td class="cell_delete" id=${userId} title="delete"
+        style="width: 90px;">Видалити</td></tr>`;
             tableBody = tableBody + row;
         })
         tableBody = tableBody + `</tbody>`;
@@ -70,7 +72,6 @@ async function DataTable(config) {
             if (!cell) {
                 return;
             } // Quit, not clicked on a cell
-            const row = cell.parentElement;
 
             //to delete functionality console.log(cell.innerHTML, row.rowIndex, cell.cellIndex, `Title: ` + cell.title);
             if (cell.title === `delete`) {
@@ -80,18 +81,34 @@ async function DataTable(config) {
                 })();
             }
         });
-        
+
         function deleteRow(id) {
             fetch(`${config.apiUrl}/${id}`, {
                 method: "DELETE",
-                headers: {"Content-type":"application/json"},
+                headers: {"Content-type": "application/json"},
                 body: JSON.stringify()
             })
         }
+
+
     }
 
-    var css = 'table td:hover{ background-color: #00ff00 }';
-    var style = document.createElement('style');
+    function putRow() {
+        let tableDiv = document.getElementById(`tableId`);
+        const row = tableDiv.insertRow(1);
+        config.columns.map((value, index) => {
+            const newCell = row.insertCell(index);
+            const newInput = document.createElement(`input`);
+            newInput.type = `text`;
+            newInput.className= `inputCell`;
+            newInput.placeholder = `${value.title}`;
+            newCell.appendChild(newInput);
+            //newCell.innerHTML =`Введіть: ${value.title}`;
+            newCell.className = `cellAdd`;
+        })
+        console.log(`work`);
+    }
+
 }
 
 
@@ -99,10 +116,13 @@ async function DataTable(config) {
 
 const config1 = {
     parent: '#usersTable',
-    columns: [{title: 'Ім’я', value: 'name'}, {title: 'Прізвище', value: 'surname'}, {
-        title: 'Вік',
-        value: 'age'
-    }, {title: 'Дата народження', value: 'age'}, {title: 'Дії', value: 'delete'},],
+    columns: [
+        {title: 'Ім’я', value: 'name'},
+        {title: 'Прізвище', value: 'surname'},
+        {title: 'Фотографія', value: 'photo'},
+        {title: 'Дата народження', value: 'age'},
+        {title: 'Дії', value: 'delete'}
+    ],
     apiUrl: "https://mock-api.shpp.me/mmykola/users"
 };
 

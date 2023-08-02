@@ -89,24 +89,31 @@ async function DataTable(config) {
                 body: JSON.stringify()
             })
         }
-
-
     }
+
 
     function putRow() {
         let tableDiv = document.getElementById(`tableId`);
         const row = tableDiv.insertRow(1);
         config.columns.map((value, index) => {
             const newCell = row.insertCell(index);
+            newCell.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    console.log(e.target.value);
+                    postUser();
+                }
+            });
             const newInput = document.createElement(`input`);
             newInput.type = `text`;
-            newInput.className= `inputCell`;
+            newInput.className = `inputCell`;
             newInput.placeholder = `${value.title}`;
             newCell.appendChild(newInput);
-            //newCell.innerHTML =`Введіть: ${value.title}`;
             newCell.className = `cellAdd`;
         })
-        console.log(`work`);
+    }
+
+    function postUser() {
+        
     }
 
 }

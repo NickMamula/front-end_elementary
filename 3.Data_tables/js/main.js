@@ -28,7 +28,7 @@ async function DataTable(config) {
     })
     //create array of all current users keys
     let usersKeys = Object.keys(newData.data);
-    console.log(usersKeys);
+    //console.log(usersKeys);
 
 
     createBody();    //we create innerHTML code of table body
@@ -42,7 +42,7 @@ async function DataTable(config) {
     let singlton = 0;
     let buttonAddEmptyRow = document.createElement(`button`);
     buttonAddEmptyRow.addEventListener(`click`, () => {
-        if(singlton===0) {
+        if (singlton === 0) {
             putRow();
             singlton++;
         }
@@ -111,29 +111,43 @@ async function DataTable(config) {
     function putRow() {
         let tableDiv = document.getElementById(`tableId`);
         const row = tableDiv.insertRow(1);
-        config.columns.map((value, index) => {
+        config.columns.map((item, index) => {
             const newCell = row.insertCell(index);
-            if (value.value !== `delete`) {
+            newCell.className = `cellAdd`;
+
+            if (item.value !== `delete`) {
                 newCell.addEventListener('keypress', function (e) {
                     if (e.key === 'Enter') {                                                   //input when click enter
                         console.log(e.target.value);
-
+                        userDefault[e.target.title] = e.target.value;
 
                         let rowCorrect = true;                                        //if true row POST
-                        Object.values(userDefault).map(value=>{
-                            if(value===``){
-                                rowCorrect=false;
+                        Object.values(userDefault).map(value => {
+                            if (value === ``) {
+                                rowCorrect = false;
                             }
                         })
-                        if(rowCorrect)postUser();
+                        if (rowCorrect) {
+                            postUser();
+                            reloadTable();
+                        } else {
+                            Object.values(userDefault).map(item => {
+                                if (item === 0) {
+                                    
+                                }
+                            })
+                        }
                     }
                 });
+                newCell.addEventListener(`input`, function (e) {
+                    userDefault[e.target.title] = e.target.value;
+                })
                 const newInput = document.createElement(`input`);
                 newInput.type = `text`;
                 newInput.className = `inputCell`;
-                newInput.placeholder = `${value.title}`;
+                newInput.placeholder = `${item.title}`;
+                newInput.title = item.value;
                 newCell.appendChild(newInput);
-                newCell.className = `cellAdd`;
             }
         })
     }
@@ -182,6 +196,13 @@ const users = [{id: 30050, name: 'Вася', surname: 'Петров', age: 12}, 
     age: 15
 }, {id: 30051, name: 'Вася', surname: 'Васечкін', age: 15},];
 
+
 (async function () {
     await DataTable(config1);
 })();
+
+function reloadTable() {
+    (async function () {
+        await DataTable(config1);
+    })();
+}

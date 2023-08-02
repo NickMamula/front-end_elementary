@@ -19,6 +19,18 @@ async function DataTable(config) {
 
     let usersId = Object.keys(newData.data);    // create id array for use in a map
 
+    //create empty user to add
+    let userDefault = {};
+    config.columns.map(value => {
+        if (value.value !== `delete`) {
+            userDefault[`${value.value}`] = ``;
+        }
+    })
+    //create array of all current users keys
+    let usersKeys = Object.keys(newData.data);
+    console.log(usersKeys);
+
+
     createBody();    //we create innerHTML code of table body
 
     const ourConfigDiv = document.querySelector(`${config.parent}`);
@@ -27,9 +39,13 @@ async function DataTable(config) {
     table.id = `tableId`;
 
     //create button add row
+    let singlton = 0;
     let buttonAddEmptyRow = document.createElement(`button`);
     buttonAddEmptyRow.addEventListener(`click`, () => {
-        putRow();
+        if(singlton===0) {
+            putRow();
+            singlton++;
+        }
     });
     buttonAddEmptyRow.innerHTML = `Додати`;
     buttonAddEmptyRow.className = `buttonAddEmptyRow`;
@@ -97,23 +113,44 @@ async function DataTable(config) {
         const row = tableDiv.insertRow(1);
         config.columns.map((value, index) => {
             const newCell = row.insertCell(index);
-            newCell.addEventListener('keypress', function (e) {
-                if (e.key === 'Enter') {
-                    console.log(e.target.value);
-                    postUser();
-                }
-            });
-            const newInput = document.createElement(`input`);
-            newInput.type = `text`;
-            newInput.className = `inputCell`;
-            newInput.placeholder = `${value.title}`;
-            newCell.appendChild(newInput);
-            newCell.className = `cellAdd`;
+            if (value.value !== `delete`) {
+                newCell.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {                                                   //input when click enter
+                        console.log(e.target.value);
+
+
+                        let rowCorrect = true;                                        //if true row POST
+                        Object.values(userDefault).map(value=>{
+                            if(value===``){
+                                rowCorrect=false;
+                            }
+                        })
+                        if(rowCorrect)postUser();
+                    }
+                });
+                const newInput = document.createElement(`input`);
+                newInput.type = `text`;
+                newInput.className = `inputCell`;
+                newInput.placeholder = `${value.title}`;
+                newCell.appendChild(newInput);
+                newCell.className = `cellAdd`;
+            }
         })
     }
 
     function postUser() {
-        
+        (async () => {
+            const rawResponse = await fetch(config.apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userDefault)
+            });
+            const content = await rawResponse.json();
+            console.log(content);
+        })();
     }
 
 }
@@ -126,8 +163,8 @@ const config1 = {
     columns: [
         {title: 'Ім’я', value: 'name'},
         {title: 'Прізвище', value: 'surname'},
-        {title: 'Фотографія', value: 'photo'},
-        {title: 'Дата народження', value: 'age'},
+        {title: 'Фотографія', value: 'avatar'},
+        {title: 'Дата народження', value: 'birthday'},
         {title: 'Дії', value: 'delete'}
     ],
     apiUrl: "https://mock-api.shpp.me/mmykola/users"

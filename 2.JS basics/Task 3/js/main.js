@@ -22,6 +22,7 @@ exampleCsv = transliterate(exampleCsv);
 let countOfCall = 0;
 
 let rechText = csvToReachText(exampleCsv);
+
 console.log(rechText(`Потрібно відвідати місто Vinnitsya де багато історично цікавих місць.`));
 console.log(rechText(`Також потрібно відвідати міста Dzhankoi,Berdichiv,Alushta де багато історично цікавих місць.`));
 

@@ -15,7 +15,7 @@ async function DataTable(config) {
     let rowTh = ``;
     let tableBody = `<tbody>`;
 
-    let tableHead = createHead(); // we create innerHTML code of table head
+    let tableHead = createHead(config); // we create innerHTML code of table head
 
     let usersId = Object.keys(newData.data);    // create id array for use in a map
 
@@ -26,6 +26,8 @@ async function DataTable(config) {
             userDefault[`${value.value}`] = ``;
         }
     })
+
+
     //create array of all current users keys
     let usersKeys = Object.keys(newData.data);
     //console.log(usersKeys);
@@ -65,17 +67,15 @@ async function DataTable(config) {
     }
 
     function createBody() {
-        Object.values(newData.data).map((value, index) => {
-            let userId = usersId[index];
+        Object.entries(newData.data).map(([userId, user]) => {
             let row = `<tr >`;
             Object
-                .entries(value)
+                .entries(user)
                 .map(item => {
                     row = row + `<td class="cell" ${tableStyle}>${item[1]}</td>`;
-                    //  console.log(item[1]);
                 })
             row = row + `<td class="cell_delete" id=${userId} title="delete"
-        style="width: 90px;">Видалити</td></tr>`;
+        style="width: 90px;"><button onclick="deleteUser('${userId}')">Видалити</button></td></tr>`;
             tableBody = tableBody + row;
         })
         tableBody = tableBody + `</tbody>`;
@@ -91,13 +91,12 @@ async function DataTable(config) {
 
             //to delete functionality console.log(cell.innerHTML, row.rowIndex, cell.cellIndex, `Title: ` + cell.title);
             if (cell.title === `delete`) {
-                deleteRow(cell.id);
-                reloadTable();
+                deleteRow(cell.id).then(reloadTable);
             }
         });
 
         function deleteRow(id) {
-            fetch(`${config.apiUrl}/${id}`, {
+            return fetch(`${config.apiUrl}/${id}`, {
                 method: "DELETE",
                 headers: {"Content-type": "application/json"},
                 body: JSON.stringify()
@@ -113,60 +112,53 @@ async function DataTable(config) {
             const newCell = row.insertCell(index);
             newCell.className = `cellAdd`;
 
-            if (item.value !== `delete`) {
-                newCell.addEventListener('keypress', function (e) {
-                    if (e.key === 'Enter') {                                                   //input when click enter
-                        userDefault[e.target.title] = e.target.value;
+            if (item.value === `delete`) {
+                return
+            }
+            newCell.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {                                                   //input when click enter
+                    userDefault[e.target.title] = e.target.value;
 
-                        let rowCorrect = true;                                        //if true row POST
-                        Object.values(userDefault).map(value => {
-                            if (value === ``) {
-                                rowCorrect = false;
+                    //if true row POST
+                    let rowCorrect = Object.values(userDefault).every(value => value !== ``)
+                    if (rowCorrect) {
+                        postUser().then(() => DataTable(config));
+                    } else {
+                        Object.keys(userDefault).map(item => {
+                            let emptyInput = document.querySelector(`[title="${item}"]`);
+                            if (userDefault[item] === ``) {
+                                emptyInput.classList.add(`input_cell_empty`);
+                                emptyInput.placeholder =`Input Data!`;
+                            } else {
+                                emptyInput.classList.remove('input_cell_empty') ;
                             }
                         })
-                        if (rowCorrect) {
-                            postUser();
-                            reloadTable();
-                        } else {
-                            Object.keys(userDefault).map(item => {
-                                if (userDefault[item] === ``) {
-                                    let emptyInput = document.querySelector(`[title="${item}"]`);
-                                    emptyInput.className = `input_cell_empty`;
-                                    emptyInput.placeholder =`Input Data!`;
-                                }else {
-                                    let emptyInput = document.querySelector(`[title="${item}"]`);
-                                    emptyInput.className = `inputCell`;
-                                }
-                            })
-                        }
                     }
-                });
-                newCell.addEventListener(`input`, function (e) {
-                    userDefault[e.target.title] = e.target.value;
-                })
-                const newInput = document.createElement(`input`);
-                newInput.type = `text`;
-                newInput.className = `inputCell`;
-                newInput.placeholder = `${item.title}`;
-                newInput.title = item.value;
-                newCell.appendChild(newInput);
-            }
+                }
+            });
+            newCell.addEventListener(`input`, function (e) {
+                userDefault[e.target.title] = e.target.value;
+            })
+            const newInput = document.createElement(`input`);
+            newInput.type = `text`;
+            newInput.className = `inputCell`;
+            newInput.placeholder = `${item.title}`;
+            newInput.title = item.value;
+            newCell.appendChild(newInput);
         })
     }
 
-    function postUser() {
-        (async () => {
-            const rawResponse = await fetch(config.apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(userDefault)
-            });
-            const content = await rawResponse.json();
-            console.log(content);
-        })();
+    async function postUser() {
+        const rawResponse = await fetch(config.apiUrl, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userDefault)
+        });
+        const content = await rawResponse.json();
+        console.log(content);
     }
 
 }
@@ -199,13 +191,8 @@ const users = [{id: 30050, name: 'Вася', surname: 'Петров', age: 12}, 
 }, {id: 30051, name: 'Вася', surname: 'Васечкін', age: 15},];
 
 
-(async function () {
-    await DataTable(config1);
-})();
+DataTable(config1)
 
 function reloadTable() {
-    (async function () {
-        await DataTable(config1);
-        location.reload();
-    })();
+    DataTable(config1);
 }

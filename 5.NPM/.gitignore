@@ -1,9 +1,2 @@
 node_modules/
-.DS_Store
-public/assets/scripts/bundle.js
-public/assets/styles/main.css
-yarn-error.log
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-.pnp.*
+.idea/
